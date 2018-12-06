@@ -1,24 +1,24 @@
 import java.io.*;
+import static java.lang.System.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String plik = "C:/Users/Kamil/Desktop/data.txt";
-        String linia = "";
-        String znak = ",";
+        String file = "C:/Users/Kamil/Desktop/data.txt";
+        String line = "";
+        String sign = ",";
 
-        for (int i = 0; i < 5; i++)
-            try (BufferedReader br = new BufferedReader(new FileReader(plik))) {
+        for (int i = 0; i > -1; i++) {
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
-                while ((linia = br.readLine()) != null) {
-                    String[] a = linia.split(znak);
-                    System.out.println(a[i]);
+                while ((line = br.readLine()) != null) {
+                    String[] a = line.split(sign);
+                    out.println(a[i]);
                 }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
     }
 }
