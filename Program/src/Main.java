@@ -17,10 +17,15 @@ public class Main {
                         if(a.length > i) {
                             out.println(a[i]);
                         }
+                        else
+                        {
+                            System.exit(0);
+                        }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
     }
 }
