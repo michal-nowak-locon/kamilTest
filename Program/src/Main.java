@@ -9,12 +9,14 @@ public class Main {
         String line = "";
         String sign = ",";
 
-        for (int i = 0; i > -1; i++) {
+        for (int i = 0; i > -1 ; i++) {
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
                 while ((line = br.readLine()) != null) {
-                    String[] a = line.split(sign);
-                    out.println(a[i]);
+                        String[] a = line.split(sign);
+                        if(a.length > i) {
+                            out.println(a[i]);
+                        }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
