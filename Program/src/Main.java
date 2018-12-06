@@ -17,10 +17,7 @@ public class Main {
                         if(a.length > i) {
                             out.println(a[i]);
                         }
-                        else
-                        {
-                            System.exit(0);
-                        }
+                        else{ i = -2; break;}
                 }
             } catch (IOException e) {
                 e.printStackTrace();
