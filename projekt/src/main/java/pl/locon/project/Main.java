@@ -1,7 +1,9 @@
 package pl.locon.project;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -29,9 +31,10 @@ public class Main {
 
                     Cell currentCell = cellIterator.next();
                     if (currentCell.getCellTypeEnum() == CellType.STRING) {
-                        System.out.print(currentCell.getStringCellValue() + " ");
+                        System.out.printf(StringUtils.swapCase(currentCell.getStringCellValue()) + " ");
                     }
                 }
+
                 System.out.println();
             }
         } catch (FileNotFoundException e) {
