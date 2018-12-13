@@ -1,7 +1,6 @@
 package pl.locon.project;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.text.WordUtils;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -53,6 +52,5 @@ public class StreamExample {
         StreamExample streamExample = new StreamExample();
         List<String> filteredList = streamExample.getProcessedList();
         System.out.println(StringUtils.join(filteredList, ", "));
-
     }
 }
