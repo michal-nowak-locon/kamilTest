@@ -21,6 +21,7 @@ public class DBOperations {
     private static SessionFactory buildSessionFactory() {
         Configuration configObj = new Configuration();
         configObj.configure("/hibernate.cfg.xml");
+        configObj.addAnnotatedClass(Student.class);
         ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
         sessionFactoryObj = configObj.buildSessionFactory(serviceRegistryObj);
 

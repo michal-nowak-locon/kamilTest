@@ -16,7 +16,7 @@ public class Student implements Serializable {
     @Column(name = "student_name")
     private String studentName;
 
-    @Column (name = "rollNumber")
+    @Column (name = "rollnumber")
     private int rollNumber;
 
     @Column(name = "course")
