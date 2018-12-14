@@ -1,54 +1,56 @@
 package com.jcg.hibernate.crud.operations;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.jdbc.Work;
 import org.hibernate.service.ServiceRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
-public class DBOperations {
+import static com.jcg.hibernate.crud.operations.DBOperations.logger;
 
+
+public class Worker_servis {
     private static Session sessionObj;
     private static SessionFactory sessionFactoryObj;
-
-    public final static Logger logger = Logger.getLogger(DBOperations.class);
-
 
     private static SessionFactory buildSessionFactory() {
         Configuration configObj = new Configuration();
         configObj.configure("/hibernate.cfg.xml");
-        configObj.addAnnotatedClass(Student.class);
+        configObj.addAnnotatedClass(Worker.class);
         ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
         sessionFactoryObj = configObj.buildSessionFactory(serviceRegistryObj);
 
         return sessionFactoryObj;
     }
 
-    public static void createRecord() {
+    public static void Create() {
         int count = 0;
-        Student studentObj = null;
+        Worker workerObj = null;
         try {
             sessionObj = buildSessionFactory().openSession();
             sessionObj.beginTransaction();
 
-            for (int j = 0; j <= 5; j++) {
+            for (int j = 101; j <= 105; j++) {
                 count = count + 1;
-                studentObj = new Student();
-                studentObj.setRollNumber(j);
-                studentObj.setStudentName("Editor =" + j);
-                studentObj.setCourse("Bachelor of Technology");
-                sessionObj.save(studentObj);
+                workerObj = new Worker();
+                workerObj.setPhone_number(j);
+                workerObj.setName("Person: " + j);
+                workerObj.setLastname("Lastname" + j);
+                workerObj.setAge( j );
+                workerObj.setSalary( 3242 );
+                sessionObj.save(workerObj);
             }
             sessionObj.getTransaction().commit();
-            logger.info("Succesfully created " + count + " Records in Database");
+            logger.info("Succesfully created " + count + "Records in Database");
         } catch (Exception sqlExcteption) {
             if (null != sessionObj.getTransaction()) {
-                System.out.println("Transation  is being rolled back...");
+                logger.info("Transation  is being rolled back...");
                 sessionObj.getTransaction().rollback();
             }
             sqlExcteption.printStackTrace();
@@ -58,41 +60,20 @@ public class DBOperations {
             }
         }
     }
-
-    @SuppressWarnings("unchecked")
-    public static List<Student> displayRecords() {
-        List studentList = new ArrayList<>();
-        try {
-            sessionObj = buildSessionFactory().openSession();
-            sessionObj.beginTransaction();
-
-            studentList = sessionObj.createQuery("SELECT s FROM Student s").list();
-        } catch (Exception sqlException) {
-            if (null != sessionObj.getTransaction()) {
-                logger.info("Transaction is being  Rolled Back...");
-                sessionObj.getTransaction().rollback();
-            }
-            sqlException.printStackTrace();
-        } finally {
-            if (sessionObj != null)
-                sessionObj.close();
-        }
-        return studentList;
-    }
-
-    public static void updateRecord(int student_id) {
+    public static void update(int worker_id) {
 
         try {
 
             sessionObj = buildSessionFactory().openSession();
             sessionObj.beginTransaction();
 
-            Student stuObj = (Student) sessionObj.get(Student.class, student_id);
-            stuObj.setStudentName("Java Code Geek");
-            stuObj.setCourse("Masters Of Technology");
+            Worker worObj = (Worker) sessionObj.get(Worker.class, worker_id);
+            worObj.setName("gudman");
+            worObj.setLastname("Master");
+            worObj.setAdres("PL");
 
             sessionObj.getTransaction().commit();
-            logger.info("\nStudent With Id?= " + student_id + " Is Successfully Updated In The Database!\n");
+            logger.info("\nWorker With Id?= " + worker_id + " Is Successfully Updated In The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("Transaction Is Being Rolled Back");
@@ -105,18 +86,39 @@ public class DBOperations {
             }
         }
     }
-
-    public static void deleteRecord(Integer student_id) {
+    @SuppressWarnings("unchecked")
+    public static List<Worker> display() {
+        List workerList = new ArrayList<>();
         try {
+            sessionObj = buildSessionFactory().openSession();
+            sessionObj.beginTransaction();
+
+            workerList = sessionObj.createQuery("SELECT s FROM Worker s").list();
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
+                logger.info("Transaction is being  Rolled Back...");
+                sessionObj.getTransaction().rollback();
+            }
+            sqlException.printStackTrace();
+        } finally {
+            if (sessionObj != null)
+                sessionObj.close();
+        }
+        return workerList;
+    }
+
+    public static void delete(Integer worker_id) {
+        try {
+
             sessionObj = buildSessionFactory().openSession();
 
             sessionObj.beginTransaction();
 
-            Student studObj = findRecordById(student_id);
-            sessionObj.delete(studObj);
+            Worker workObj = findById(worker_id);
+            sessionObj.delete(workObj);
 
             sessionObj.getTransaction().commit();
-            logger.info("\nStudent With Id?= " + student_id + " Is Successfully Deleted From The Database!\n");
+            logger.info("\nWorker With Id?= " + worker_id + " Is Successfully Deleted From The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -130,13 +132,13 @@ public class DBOperations {
         }
     }
 
-    public static Student findRecordById(Integer find_student_id) {
-        Student findStudentObj = null;
+    public static Worker findById(Integer find_worker_id) {
+        Worker findWorkerObj = null;
         try {
             sessionObj = buildSessionFactory().openSession();
             sessionObj.beginTransaction();
 
-            findStudentObj = (Student) sessionObj.load(Student.class, find_student_id);
+            findWorkerObj = (Worker) sessionObj.load(Worker.class, find_worker_id);
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -144,15 +146,15 @@ public class DBOperations {
             }
             sqlException.printStackTrace();
         }
-        return findStudentObj;
+        return findWorkerObj;
     }
 
-    public static void deleteAllRecords() {
+    public static void deleteAll() {
         try {
             sessionObj = buildSessionFactory().openSession();
 
             sessionObj.beginTransaction();
-            Query queryObj = sessionObj.createQuery("DELETE FROM Student");
+            Query queryObj = sessionObj.createQuery("DELETE FROM Worker");
 
             queryObj.executeUpdate();
 
@@ -171,3 +173,5 @@ public class DBOperations {
         }
     }
 }
+
+

@@ -1,11 +1,13 @@
 package com.jcg.hibernate.crud.operations;
 
 import java.util.List;
+import java.util.logging.Logger;
 
-import org.apache.log4j.Logger;
+import static com.jcg.hibernate.crud.operations.DBOperations.logger;
+
 
 public class AppMain {
-    public final static Logger logger = Logger.getLogger(AppMain.class);
+
 
     public static void main(String[] args) {
 
@@ -49,6 +51,50 @@ public class AppMain {
         if(deleteAll.size() == 0) {
             logger.info("\nNo Records Are Present In The Database Table!\n");
         }
+
+
+        logger.info(".......Hibernate Crud Operations Example.......\n");
+
+        logger.info("\n=======CREATE RECORDS=======\n");
+        Worker_servis.Create();
+
+        logger.info("\n=======READ RECORDS=======\n");
+        List<Worker> viewWorkers = Worker_servis.display();
+        if(viewWorkers != null && viewWorkers.size() > 0) {
+            for(Worker workerObj : viewWorkers) {
+                logger.info(workerObj.toString());
+            }
+        }
+
+        logger.info("\n=======UPDATE RECORDS=======\n");
+        int updateid = 1;
+        Worker_servis.update(updateid);
+        logger.info("\n=======READ RECORDS AFTER UPDATION=======\n");
+        List updateWorker = Worker_servis.display();
+        if(updateWorker != null && updateWorker.size() > 0) {
+            for(Object workerObj : updateWorker) {
+                logger.info(updateWorker.toString());
+            }
+        }
+
+        logger.info("=======DELETE RECORD=======");
+        int deleteid = 5;
+        Worker_servis.delete(deleteid);
+        logger.info("=======READ RECORDS AFTER DELETION=======");
+        List deleteWorkerRecord = Worker_servis.display();
+        for(Object workerObj : deleteWorkerRecord) {
+            logger.info(workerObj.toString());
+        }
+
+        logger.info("=======DELETE ALL RECORDS=======");
+        Worker_servis.deleteAll();
+
+        logger.info("=======READ RECORDS AFTER ALL RECORDS DELETION=======");
+        deleteAll = Worker_servis.display();
+        if(deleteAll.size() == 0) {
+            logger.info("No Records Are Present In The Database Table!");
+        }
         System.exit(0);
     }
+
 }
