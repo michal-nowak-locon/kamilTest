@@ -5,9 +5,7 @@ import java.util.logging.Logger;
 
 import static com.jcg.hibernate.crud.operations.DBOperations.logger;
 
-
 public class AppMain {
-
 
     public static void main(String[] args) {
 
@@ -63,17 +61,6 @@ public class AppMain {
         if(viewWorkers != null && viewWorkers.size() > 0) {
             for(Worker workerObj : viewWorkers) {
                 logger.info(workerObj.toString());
-            }
-        }
-
-        logger.info("\n=======UPDATE RECORDS=======\n");
-        int updateid = 1;
-        Worker_servis.update(updateid);
-        logger.info("\n=======READ RECORDS AFTER UPDATION=======\n");
-        List updateWorker = Worker_servis.display();
-        if(updateWorker != null && updateWorker.size() > 0) {
-            for(Object workerObj : updateWorker) {
-                logger.info(updateWorker.toString());
             }
         }
 

@@ -60,32 +60,7 @@ public class Worker_servis {
             }
         }
     }
-    public static void update(int worker_id) {
 
-        try {
-
-            sessionObj = buildSessionFactory().openSession();
-            sessionObj.beginTransaction();
-
-            Worker worObj = (Worker) sessionObj.get(Worker.class, worker_id);
-            worObj.setName("gudman");
-            worObj.setLastname("Master");
-            worObj.setAdres("PL");
-
-            sessionObj.getTransaction().commit();
-            logger.info("\nWorker With Id?= " + worker_id + " Is Successfully Updated In The Database!\n");
-        } catch (Exception sqlException) {
-            if (null != sessionObj.getTransaction()) {
-                logger.info("Transaction Is Being Rolled Back");
-                sessionObj.getTransaction().rollback();
-            }
-            sqlException.printStackTrace();
-        } finally {
-            if (sessionObj != null) {
-                sessionObj.close();
-            }
-        }
-    }
     @SuppressWarnings("unchecked")
     public static List<Worker> display() {
         List workerList = new ArrayList<>();
