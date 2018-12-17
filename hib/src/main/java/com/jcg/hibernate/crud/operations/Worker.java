@@ -10,44 +10,44 @@ import java.io.Serializable;
 public class Worker  implements Serializable {
 
     @Id
-    @Column(name = "worker_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "worker_phone_number")
-    private int phone_number;
+    @Column(name = "phone_number")
+    private int phoneNumber;
 
-    @Column(name = "worker_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "worker_lastname")
-    private String lastname;
+    @Column(name = "last_name")
+    private String lastName;
 
-    @Column(name = "worker_age")
+    @Column(name = "age")
     private int age;
 
-    @Column(name = "worker_adress")
-    private String adres;
+    @Column(name = "address")
+    private String address;
 
-    @Column(name = "worker_salary")
+    @Column(name = "salary")
     private float salary;
 
     public void setId(int id) {
         this.id = id;
     }
-    public int getPhone_number(){return phone_number;}
-    public void setPhone_number(int phone_number){this.phone_number = phone_number;}
+    public int getPhoneNumber(){return phoneNumber;}
+    public void setPhoneNumber(int phoneNumber){this.phoneNumber = phoneNumber;}
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     public int getAge() {
         return age;
@@ -55,15 +55,21 @@ public class Worker  implements Serializable {
     public void setAge(int age) {
         this.age = age;
     }
-    public String getAdres(){ return adres; }
-    public void setAdres(String adres){this.adres = adres; }
+    public String getAddress(){ return address; }
+    public void setAddress(String address){this.address = address; }
     public float getSalary() {return salary; }
     public void setSalary(float salary){this.salary = salary;}
 
     @Override
     public String toString() {
-        return "ID:  " + this.id + "Phone number: " + this.phone_number + "Name: " + this.name + "Last name: " + this.lastname + "Age: " + this.age + "Adress: " + this.adres + "Salary: " + this.salary;
+        return "Worker{" +
+                "id= " + id +
+                ", phone_number= " + phoneNumber +
+                ", name= '" + name + '\'' +
+                ", last_name= '" + lastName + '\'' +
+                ", age= " + age +
+                ", address= '" + address + '\'' +
+                ", salary= " + salary +
+                '}';
     }
-
-
 }

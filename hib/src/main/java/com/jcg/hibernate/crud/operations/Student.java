@@ -9,11 +9,11 @@ public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "student_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "student_name")
+    @Column(name = "name")
     private String studentName;
 
     @Column (name = "rollnumber")

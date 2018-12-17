@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static com.jcg.hibernate.crud.operations.DBOperations.logger;
-
 
 public class Worker_servis {
+    public final static Logger log = Logger.getLogger(String.valueOf(Worker_servis.class));
+
     private static Session sessionObj;
     private static SessionFactory sessionFactoryObj;
 
@@ -39,18 +39,18 @@ public class Worker_servis {
             for (int j = 101; j <= 105; j++) {
                 count = count + 1;
                 workerObj = new Worker();
-                workerObj.setPhone_number(j);
+                workerObj.setPhoneNumber(j);
                 workerObj.setName("Person: " + j);
-                workerObj.setLastname("Lastname" + j);
+                workerObj.setLastName("LastName" + j);
                 workerObj.setAge( j );
                 workerObj.setSalary( 3242 );
                 sessionObj.save(workerObj);
             }
             sessionObj.getTransaction().commit();
-            logger.info("Succesfully created " + count + "Records in Database");
+            log.info("Succesfully created " + count + "Records in Database");
         } catch (Exception sqlExcteption) {
             if (null != sessionObj.getTransaction()) {
-                logger.info("Transation  is being rolled back...");
+                log.info("Transation  is being rolled back...");
                 sessionObj.getTransaction().rollback();
             }
             sqlExcteption.printStackTrace();
@@ -60,7 +60,32 @@ public class Worker_servis {
             }
         }
     }
+    public static void update(int worker_id) {
 
+        try {
+
+            sessionObj = buildSessionFactory().openSession();
+            sessionObj.beginTransaction();
+
+            Worker worObj = (Worker) sessionObj.get(Worker.class, worker_id);
+            worObj.setName("gudman");
+            worObj.setLastName("Master");
+            worObj.setAddress("PL");
+
+            sessionObj.getTransaction().commit();
+            log.info("\nWorker With Id?= " + worker_id + " Is Successfully Updated In The Database!\n");
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
+                log.info("Transaction Is Being Rolled Back");
+                sessionObj.getTransaction().rollback();
+            }
+            sqlException.printStackTrace();
+        } finally {
+            if (sessionObj != null) {
+                sessionObj.close();
+            }
+        }
+    }
     @SuppressWarnings("unchecked")
     public static List<Worker> display() {
         List workerList = new ArrayList<>();
@@ -71,7 +96,7 @@ public class Worker_servis {
             workerList = sessionObj.createQuery("SELECT s FROM Worker s").list();
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
-                logger.info("Transaction is being  Rolled Back...");
+                log.info("Transaction is being  Rolled Back...");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
@@ -93,10 +118,10 @@ public class Worker_servis {
             sessionObj.delete(workObj);
 
             sessionObj.getTransaction().commit();
-            logger.info("\nWorker With Id?= " + worker_id + " Is Successfully Deleted From The Database!\n");
+            log.info("\nWorker With Id?= " + worker_id + " Is Successfully Deleted From The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
-                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                log.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
@@ -116,7 +141,7 @@ public class Worker_servis {
             findWorkerObj = (Worker) sessionObj.load(Worker.class, find_worker_id);
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
-                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                log.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
@@ -134,10 +159,10 @@ public class Worker_servis {
             queryObj.executeUpdate();
 
             sessionObj.getTransaction().commit();
-            logger.info("\nSuccessfully Deleted All Records From The Database Table!\n");
+            log.info("\nSuccessfully Deleted All Records From The Database Table!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
-                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                log.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
