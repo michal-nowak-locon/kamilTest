@@ -68,7 +68,7 @@ public class Worker_servis {
             sessionObj.beginTransaction();
 
             Worker worObj = (Worker) sessionObj.get(Worker.class, worker_id);
-            worObj.setName("gudman");
+            worObj.setName("fff");
             worObj.setLastName("Master");
             worObj.setAddress("PL");
 

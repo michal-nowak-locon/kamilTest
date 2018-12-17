@@ -96,5 +96,4 @@ public class AppMain {
         }
         System.exit(0);
     }
-
 }
