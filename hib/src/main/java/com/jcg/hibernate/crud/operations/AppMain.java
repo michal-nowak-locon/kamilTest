@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 
 public class AppMain {
 
-
     public static void main(String[] args) {
 
         final Logger log2 = Logger.getLogger(String.valueOf(AppMain.class));
@@ -25,7 +24,7 @@ public class AppMain {
         }
 
         log2.info("\n=======UPDATE RECORDS=======\n");
-        int updateId = 1;
+        int updateId = viewStudents.get(0).getId();
         DBOperations.updateRecord(updateId);
         log2.info("\n=======READ RECORDS AFTER UPDATION=======\n");
         List updateStudent = DBOperations.displayRecords();
@@ -36,7 +35,7 @@ public class AppMain {
         }
 
         log2.info("\n=======DELETE RECORD=======\n");
-        int deleteId = 5;
+        int deleteId = viewStudents.get(0).getId();
         DBOperations.deleteRecord(deleteId);
         log2.info("\n=======READ RECORDS AFTER DELETION=======\n");
         List deleteStudentRecord = DBOperations.displayRecords();
@@ -52,7 +51,6 @@ public class AppMain {
             log2.info("\nNo Records Are Present In The Database Table!\n");
         }
 
-
         log2.info(".......Hibernate Crud Operations Example.......\n");
 
         log2.info("\n=======CREATE RECORDS=======\n");
@@ -67,7 +65,7 @@ public class AppMain {
         }
 
         log2.info("\n=======UPDATE RECORDS=======\n");
-        int updateid = 1;
+        int updateid = viewWorkers.get(0).getId();
         Worker_servis.update(updateid);
         log2.info("\n=======READ RECORDS AFTER UPDATION=======\n");
         List updateWorker = Worker_servis.display();
@@ -78,7 +76,7 @@ public class AppMain {
         }
 
         log2.info("=======DELETE RECORD=======");
-        int deleteid = 5;
+        int deleteid = viewWorkers.get(0).getId();
         Worker_servis.delete(deleteid);
         log2.info("=======READ RECORDS AFTER DELETION=======");
         List deleteWorkerRecord = Worker_servis.display();

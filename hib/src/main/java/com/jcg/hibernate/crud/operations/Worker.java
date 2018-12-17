@@ -60,16 +60,20 @@ public class Worker  implements Serializable {
     public float getSalary() {return salary; }
     public void setSalary(float salary){this.salary = salary;}
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Worker{" +
                 "id= " + id +
-                ", phone_number= " + phoneNumber +
-                ", name= '" + name + '\'' +
-                ", last_name= '" + lastName + '\'' +
-                ", age= " + age +
-                ", address= '" + address + '\'' +
-                ", salary= " + salary +
+                ", Phone number = " + phoneNumber +
+                ", Name = '" + name + '\'' +
+                ", Last name = '" + lastName + '\'' +
+                ", Age = " + age +
+                ", Address= '" + address + '\'' +
+                ", Salary= " + salary +
                 '}';
     }
 }

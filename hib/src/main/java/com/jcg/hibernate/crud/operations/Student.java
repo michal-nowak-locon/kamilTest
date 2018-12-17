@@ -43,8 +43,13 @@ public class Student implements Serializable {
     public void setCourse(String course) {
         this.course = course;
     }
+
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString(){
-        return "Student details?= ID: " + this.id + "Roll No.: " + this.rollNumber + "Course: " + this.course;
+        return "Student details. ID: " + this.id + " Roll No.: " + this.rollNumber + " Course: " + this.course;
     }
 }

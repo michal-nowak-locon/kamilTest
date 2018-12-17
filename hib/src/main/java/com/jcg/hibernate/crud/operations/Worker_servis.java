@@ -63,14 +63,10 @@ public class Worker_servis {
     public static void update(int worker_id) {
 
         try {
-
             sessionObj = buildSessionFactory().openSession();
             sessionObj.beginTransaction();
 
             Worker worObj = (Worker) sessionObj.get(Worker.class, worker_id);
-            worObj.setName("fff");
-            worObj.setLastName("Master");
-            worObj.setAddress("PL");
 
             sessionObj.getTransaction().commit();
             log.info("\nWorker With Id?= " + worker_id + " Is Successfully Updated In The Database!\n");
@@ -109,7 +105,6 @@ public class Worker_servis {
 
     public static void delete(Integer worker_id) {
         try {
-
             sessionObj = buildSessionFactory().openSession();
 
             sessionObj.beginTransaction();
