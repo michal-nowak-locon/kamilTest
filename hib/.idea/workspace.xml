@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b7bbd9b-5f52-4a8b-9c6f-29564718124c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker_servis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker_servis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jcg/hibernate/crud/operations/AppMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jcg/hibernate/crud/operations/AppMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jcg/hibernate/crud/operations/Worker_servis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jcg/hibernate/crud/operations/Worker_servis.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/AppMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+            <state relative-caret-position="1190">
+              <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -31,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/DBOperations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1394">
               <caret line="90" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker_servis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1734">
               <caret line="112" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
@@ -52,11 +46,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="357">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding>
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
                 <element signature="e#1104#1105#0" expanded="true" />
               </folding>
             </state>
@@ -66,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="918">
               <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -149,7 +141,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="width" value="1364" />
     <option name="height" value="726" />
@@ -160,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,14 +197,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545050983528" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545051042446" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Nowy folder (3)/hib" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -295,9 +287,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26626325" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -310,7 +301,7 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39965987" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.35034013" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.35034013" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32993197" />
       <window_info anchor="bottom" id="Docker" order="8" />
@@ -444,23 +435,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker_servis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/AppMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+        <state relative-caret-position="1190">
+          <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/DBOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="1394">
           <caret line="90" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -468,9 +452,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker_servis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
+        <state relative-caret-position="918">
           <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -482,11 +473,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jcg/hibernate/crud/operations/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding>
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
             <element signature="e#1104#1105#0" expanded="true" />
           </folding>
         </state>
