@@ -24,7 +24,6 @@ public class Application {
             for (String beanName : beanNames){
                 System.out.println(beanName);
             }
-
         };
     }
 }
